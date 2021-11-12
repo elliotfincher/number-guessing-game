@@ -25,7 +25,7 @@ def start_game():
       while True:
         try:
           player_guess=int(player_guess)
-        except ValueError as err:
+        except ValueError:
           print("Please ensure you enter a number between 1 and 10")
           number_of_attempts += 1
           player_guess=input("Please guess a number: ")
