@@ -12,28 +12,28 @@ import math
 def start_game():
     
     #Assign highscore to be referenced later - infinity value as it will be overwritten with something lower.
-    highscore=math.inf
+    highscore = math.inf
     #Welcome message
     print("Welcome to the Elliot's number guessing game!")
        
     while True:
     
-      randnum=random.randint(1,10)
-      number_of_attempts=1
-      player_guess=input("Please guess a number: ")
+      randnum = random.randint(1,10)
+      number_of_attempts = 1
+      player_guess = input("Please guess a number: ")
       
       while True:
         try:
-          player_guess=int(player_guess)
+          player_guess = int(player_guess)
         except ValueError:
           print("Please ensure you enter a number between 1 and 10")
           number_of_attempts += 1
-          player_guess=input("Please guess a number: ")
+          player_guess = input("Please guess a number: ")
           continue
-        if (player_guess <=0) or (player_guess >10):
+        if (player_guess <= 0) or (player_guess > 10):
           print("Please ensure you enter a number between 1 and 10")
           number_of_attempts += 1
-          player_guess=input("Please guess a number: ")
+          player_guess = input("Please guess a number: ")
           continue
         else:
             if (player_guess == randnum):
@@ -41,12 +41,12 @@ def start_game():
             elif (player_guess > randnum):
               print("It's lower")
               number_of_attempts += 1
-              player_guess=input("Please guess a number: ")
+              player_guess = input("Please guess a number: ")
               continue
             else:
               print("It's higher")
               number_of_attempts +=1
-              player_guess=input("Please guess a number: ")
+              player_guess = input("Please guess a number: ")
               continue
         
       print("You got it!")
@@ -54,11 +54,11 @@ def start_game():
       if(number_of_attempts < highscore):
         highscore = number_of_attempts  
         
-      playagain=input("Would you like to play again? (y/n) ")    
+      playagain = input("Would you like to play again? (y/n) ")    
         #ensure no value other than "y" and "n" can be entered
         
       while (playagain.lower() != "y") and (playagain.lower() != "n"):
-        playagain=input("Please choose either 'y' or 'n': ")
+        playagain = input("Please choose either 'y' or 'n': ")
       else:
         if(playagain.lower() == "n"):
           print("Thank you for playing the number guessing game :)")
